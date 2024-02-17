@@ -5,8 +5,8 @@ export default function Avatar({ src, alt = "" }) {
     <img
       src={src}
       alt={alt}
-      width="50px"
-      height="50px"
+      width="40px"
+      height="40px"
       className="rounded-circle"
     />
   );
