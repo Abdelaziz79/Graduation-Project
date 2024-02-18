@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useSliderToggle } from "../context/SliderToggleContext";
 import {
   HiOutlineChevronDoubleLeft,
@@ -9,14 +10,10 @@ export default function SliderToggleButton() {
   const { show, handleToggle } = useSliderToggle();
   return (
     <span
-      className=""
+      className="p-2 rounded-circle trans sidebar-toggle-button "
       style={{
-        cursor: "pointer",
-        position: "fixed",
-        zIndex: "1000",
-        top: "50%",
-        left: show ? "190px" : "0px",
-        transition: "all 0.3s ease",
+        left: show ? "170px" : "0px",
+        transform: show ? "translate(0%, 0%)" : "translate(-50%, 0%)",
       }}
       onClick={() => handleToggle(!show)}
     >

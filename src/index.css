@@ -1,4 +1,58 @@
-html,
-body {
-  transition: all 500ms ease;
+.sidebar {
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.main {
+  height: 92vh;
+}
+
+.trans {
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle-button {
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.sidebar-toggle-button:hover {
+  color: #0d6efd;
+  background-color: #ebebeb;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.sidebar-div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  color: #212529;
+  font-weight: 500;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+.sidebar-div a {
+  text-decoration: none;
+  color: #212529;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 5px;
+}
+.sidebar-div a:hover {
+  background-color: #ebebeb;
+  color: #0d6efd;
 }

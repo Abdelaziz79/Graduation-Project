@@ -22,4 +22,4 @@ function useSliderToggle() {
   }
   return context;
 }
-export { useSliderToggle, SliderToggleProvider };
+export { useSliderToggle };

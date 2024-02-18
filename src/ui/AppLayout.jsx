@@ -13,17 +13,21 @@ export default function AppLayout() {
   return (
     <Row className="m-0 p-0">
       <Col
-        className={`col-2 m-0 p-0 `}
-        style={{ width: show ? "200px" : "0px", transition: "all 0.3s ease" }}
+        className={`trans col-2 m-0 p-0 `}
+        style={{ width: show ? "200px" : "0px" }}
       >
         <SideBar />
       </Col>
       <Col className="p-0 m-0">
         <NavBar />
         <SliderToggleButton />
-        <main className="overflow-auto" style={{ height: "92vh" }}>
-          <Container className="mt-3 " style={{ height: "100%" }}>
-            <Outlet />
+        <main className="overflow-auto main">
+          <Container className="h-100 my-3 mx-auto ">
+            <Row>
+              <Col sm={12} md={12} lg={9} className="mx-auto">
+                <Outlet />
+              </Col>
+            </Row>
           </Container>
         </main>
       </Col>

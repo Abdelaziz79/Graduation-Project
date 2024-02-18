@@ -1,11 +1,12 @@
+import Avatar from "./Avatar";
+
 import { useState } from "react";
 import { Card } from "react-bootstrap";
-import Avatar from "./Avatar";
 
 export default function Post({ post }) {
   const [showComments, setShowComments] = useState(false);
   return (
-    <Card>
+    <Card className="">
       <Card.Header>
         <div className="d-flex align-items-center gap-3">
           <Avatar src={post.author?.image} alt="avatar" />
@@ -21,8 +22,7 @@ export default function Post({ post }) {
         src="https://usemynotes.com/wp-content/uploads/2021/02/what-are-arrays-in-java.jpg"
         alt="Card image"
         height="250px"
-        style={{ objectFit: "cover" }}
-        className="rounded"
+        className="rounded cover"
       />
       <Card.Body>
         <Card.Title>{post.title}</Card.Title>
@@ -32,8 +32,7 @@ export default function Post({ post }) {
         <span>🔽 12 </span>
 
         <span
-          className="text-muted float-end "
-          style={{ cursor: "pointer" }}
+          className="text-muted float-end pointer"
           onClick={() => setShowComments(!showComments)}
         >
           2 comments
