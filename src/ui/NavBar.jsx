@@ -1,8 +1,11 @@
 import React from "react";
 import Avatar from "./Avatar";
 
-import { HiMiniBell } from "react-icons/hi2";
-import { HiFire } from "react-icons/hi2";
+import {
+  HiOutlineFire,
+  HiOutlineArrowRightOnRectangle,
+  HiOutlineBell,
+} from "react-icons/hi2";
 
 export default function NavBar() {
   return (
@@ -16,12 +19,17 @@ export default function NavBar() {
         </li>
         <li>
           <span>
-            <HiMiniBell size={20} />
+            <HiOutlineBell size={20} />
           </span>
         </li>
         <li>
           <span>
-            <HiFire size={20} />
+            <HiOutlineFire size={20} />
+          </span>
+        </li>
+        <li>
+          <span>
+            <HiOutlineArrowRightOnRectangle size={20} />
           </span>
         </li>
       </ul>

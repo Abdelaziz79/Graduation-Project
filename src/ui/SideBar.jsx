@@ -1,21 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSliderToggle } from "../context/SliderToggleContext";
+import {
+  HiHome,
+  HiUser,
+  HiMiniBookOpen,
+  HiMiniGlobeAsiaAustralia,
+} from "react-icons/hi2";
 
 export default function SideBar() {
   const { show } = useSliderToggle();
   return (
     <div
-      className={` trans h-100 bg-body-tertiary d-flex flex-column overflow-x-hidden overflow-y-auto ${
+      className={` trans h-100 bg-body-tertiary d-flex flex-column align-items-center  overflow-x-hidden overflow-y-auto ${
         show ? "p-3" : "p-0"
       }`}
     >
-      <h3>CodeRoad</h3>
+      <img
+        src="https://picsum.photos/200"
+        alt="logo"
+        width="85px"
+        height="85px"
+        className="rounded-circle"
+      />
+      <p className="lead fw-bold ">CodeRoad</p>
       <div className="sidebar-div ">
-        <Link to="/">home</Link>
-        <Link to="/user">user</Link>
-        <Link to="/toipcs">toipcs</Link>
-        <Link to="/dashboard">dashboard</Link>
+        <NavLink to="/">
+          <span>
+            <HiHome size={20} />{" "}
+          </span>
+          home
+        </NavLink>
+        <NavLink to="/user">
+          <span>
+            <HiUser size={20} />{" "}
+          </span>
+          user
+        </NavLink>
+        <NavLink to="/toipcs">
+          <span>
+            <HiMiniBookOpen size={20} />{" "}
+          </span>
+          toipcs
+        </NavLink>
+        <NavLink to="/posts">
+          <span>
+            <HiMiniGlobeAsiaAustralia size={20} />{" "}
+          </span>
+          posts
+        </NavLink>
       </div>
     </div>
   );

@@ -42,17 +42,17 @@ const posts = [
     content: "Content 3",
   },
   {
-    id: 3,
+    id: 4,
     title: "Post 3",
     content: "Content 3",
   },
   {
-    id: 3,
+    id: 5,
     title: "Post 3",
     content: "Content 3",
   },
   {
-    id: 3,
+    id: 6,
     title: "Post 3",
     content: "Content 3",
   },

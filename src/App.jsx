@@ -12,10 +12,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout />}>
-            <Route index element={<Posts />} />
+            <Route index element={<Dashboard />} />
             <Route path="user" element={<UserPage />} />
             <Route path="toipcs" element={<Toipcs />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="posts" element={<Posts />} />
             <Route path="*" element={<h1> Page Not Found</h1>} />
           </Route>
         </Routes>
