@@ -11,7 +11,7 @@ export default function AppLayout() {
   const { show } = useSliderToggle();
 
   return (
-    <Row className="m-0 p-0">
+    <Row className="m-0 p-0 main">
       <Col
         className={`trans col-2 m-0 p-0  `}
         style={{ width: show ? "200px" : "0px" }}
@@ -21,7 +21,7 @@ export default function AppLayout() {
       <Col className="p-0 m-0">
         <NavBar />
         <SliderToggleButton />
-        <main className="overflow-auto main">
+        <main className="overflow-auto" style={{ height: "92vh" }}>
           <Container className="h-100 my-3 mx-auto ">
             <Row>
               <Col sm={12} md={12} lg={9} className="mx-auto">

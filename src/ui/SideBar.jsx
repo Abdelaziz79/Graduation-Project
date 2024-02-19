@@ -12,7 +12,7 @@ export default function SideBar() {
   const { show } = useSliderToggle();
   return (
     <div
-      className={` trans h-100 bg-body-tertiary d-flex flex-column align-items-center  overflow-x-hidden overflow-y-auto ${
+      className={`border-end trans h-100 bg-body-tertiary d-flex flex-column align-items-center  overflow-x-hidden overflow-y-auto ${
         show ? "p-3" : "p-0"
       }`}
     >
@@ -26,28 +26,24 @@ export default function SideBar() {
       <p className="lead fw-bold ">CodeRoad</p>
       <div className="sidebar-div ">
         <NavLink to="/">
-          <span>
-            <HiHome size={20} />{" "}
+          <span className="sidebar-button">
+            <HiHome size={20} /> Home
           </span>
-          home
         </NavLink>
         <NavLink to="/user">
-          <span>
-            <HiUser size={20} />{" "}
+          <span className="sidebar-button">
+            <HiUser size={20} /> User
           </span>
-          user
         </NavLink>
         <NavLink to="/toipcs">
-          <span>
-            <HiMiniBookOpen size={20} />{" "}
+          <span className="sidebar-button">
+            <HiMiniBookOpen size={20} /> Toipcs
           </span>
-          toipcs
         </NavLink>
         <NavLink to="/posts">
-          <span>
-            <HiMiniGlobeAsiaAustralia size={20} />{" "}
+          <span className="sidebar-button">
+            <HiMiniGlobeAsiaAustralia size={20} /> Posts
           </span>
-          posts
         </NavLink>
       </div>
     </div>

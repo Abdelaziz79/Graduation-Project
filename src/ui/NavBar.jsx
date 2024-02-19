@@ -10,7 +10,7 @@ import {
 export default function NavBar() {
   return (
     <div className="">
-      <ul className="d-flex align-items-center nav justify-content-end bg-body-tertiary p-3 gap-3">
+      <ul className="border-bottom d-flex align-items-center nav justify-content-end bg-body-tertiary p-3 gap-3">
         <li>
           <Avatar src="https://picsum.photos/200" alt="avatar" />
         </li>

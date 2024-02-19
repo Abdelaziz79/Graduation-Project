@@ -3,7 +3,7 @@
   transition: all 0.3s ease;
 }
 .main {
-  height: 89vh;
+  height: 100vh;
 }
 
 .trans {
@@ -91,4 +91,10 @@
 
 .no-scroll-width {
   scrollbar-width: none;
+}
+
+.sidebar-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

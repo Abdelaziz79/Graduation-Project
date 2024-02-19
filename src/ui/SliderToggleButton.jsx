@@ -10,9 +10,9 @@ export default function SliderToggleButton() {
   const { show, handleToggle } = useSliderToggle();
   return (
     <span
-      className="p-2 rounded-circle trans sidebar-toggle-button "
+      className="p-2 rounded-circle trans sidebar-toggle-button border "
       style={{
-        left: show ? "170px" : "0px",
+        left: show ? "175px" : "0px",
         transform: show ? "translate(0%, 0%)" : "translate(-50%, 0%)",
       }}
       onClick={() => handleToggle(!show)}
