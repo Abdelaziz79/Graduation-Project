@@ -98,3 +98,7 @@
   align-items: center;
   gap: 5px;
 }
+.explanation-window img {
+  width: 50%;
+  object-fit: cover;
+}

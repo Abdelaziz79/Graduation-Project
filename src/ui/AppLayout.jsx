@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import SliderToggleButton from "./SliderToggleButton";
 
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import { useSliderToggle } from "../context/SliderToggleContext";
 

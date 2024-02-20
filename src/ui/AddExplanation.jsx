@@ -1,51 +1,89 @@
 import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { Button, Col, Row } from "react-bootstrap";
+
+import Explanation from "./Explanation";
+import AddQuiz from "./AddQuiz";
 
 export default function AddExplanation() {
+  const [questions, setQuestions] = useState([]);
+
   const [explanation, setExplanation] = useState("");
   const [topic, setTopic] = useState("");
-  const [level, setLevel] = useState("");
+  const [level, setLevel] = useState("easy");
+  const [title, setTitle] = useState("");
+
+  const [showQuiz, setShowQuiz] = useState(false);
+
   function handleSubmit(e) {
     e.preventDefault();
+    if (!topic || !level || !title || !explanation) return;
     const newExplanation = {
       topic,
+      title,
       level,
       explanation,
+      questions,
     };
+
     console.log(newExplanation);
+    setExplanation("");
+    setTopic("");
+    setLevel("easy");
+    setTitle("");
+    setQuestions([]);
+    setShowQuiz(false);
   }
+
   return (
     <Row className="">
       <Col sm={12} md={12} lg={6} className="">
         <form>
-          <label htmlFor="topic" className="form-label fs-4">
-            Topic
-          </label>
-          <input
-            type="text"
-            name="topic"
-            id="topic"
-            className=" form-control mb-3"
-            placeholder="topic name"
-            value={topic}
-            onChange={(e) => setTopic(e.target.value)}
-          />
-          <label htmlFor="level" className="form-label fs-4">
-            Level
-          </label>
-          <select
-            name="level"
-            id="level"
-            className="form-select mb-3"
-            value={level}
-            onChange={(e) => setLevel(e.target.value)}
-          >
-            <option value="easy">easy</option>
-            <option value="medium">medium</option>
-            <option value="hard">hard</option>
-          </select>
+          <Row>
+            <Col lg={6} md={6} sm={12}>
+              <label htmlFor="topic" className="form-label fs-4">
+                Topic
+              </label>
+              <input
+                type="text"
+                name="topic"
+                id="topic"
+                className=" form-control mb-3"
+                placeholder="topic name"
+                value={topic}
+                onChange={(e) => setTopic(e.target.value)}
+              />
+            </Col>
+            <Col lg={6} md={6} sm={12}>
+              <label htmlFor="level" className="form-label fs-4">
+                Level
+              </label>
+              <select
+                name="level"
+                id="level"
+                className="form-select mb-3"
+                value={level}
+                onChange={(e) => setLevel(e.target.value)}
+              >
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
+              </select>
+            </Col>
+            <Col lg={12} md={12} sm={12}>
+              <label htmlFor="title" className="form-label fs-4">
+                Title
+              </label>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                className=" form-control mb-3"
+                placeholder="title name"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+            </Col>
+          </Row>
           <label htmlFor="explanation" className="form-label fs-4">
             Explanation
           </label>
@@ -66,28 +104,25 @@ export default function AddExplanation() {
         <Explanation explanation={explanation} />
       </Col>
       <Col>
-        <button className="btn btn-success mt-3" onClick={handleSubmit}>
-          Add
-        </button>
+        <div className="">
+          <Button
+            className=" btn-success mt-3"
+            onClick={() => setShowQuiz((show) => !show)}
+          >
+            Add Quize
+          </Button>
+        </div>
+        <div>
+          {showQuiz && (
+            <AddQuiz questions={questions} setQuestions={setQuestions} />
+          )}
+        </div>
+        <div className="mt-3">
+          <Button className=" btn-success " onClick={handleSubmit}>
+            Add
+          </Button>
+        </div>
       </Col>
     </Row>
-  );
-}
-
-function Explanation({ explanation }) {
-  return (
-    <>
-      <label className="form-label fs-4">The Result</label>
-      <div style={{ height: "696px" }}>
-        <Markdown
-          remarkPlugins={[remarkGfm]}
-          className={
-            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto"
-          }
-        >
-          {explanation}
-        </Markdown>
-      </div>
-    </>
   );
 }
