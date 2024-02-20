@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm"; // Import remark-gfm
+import remarkGfm from "remark-gfm";
 
 export default function AddExplanation() {
   const [explanation, setExplanation] = useState("");
@@ -20,7 +20,7 @@ export default function AddExplanation() {
     <Row className="">
       <Col sm={12} md={12} lg={6} className="">
         <form>
-          <label htmlFor="topic" className="form-label">
+          <label htmlFor="topic" className="form-label fs-4">
             Topic
           </label>
           <input
@@ -32,7 +32,7 @@ export default function AddExplanation() {
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
           />
-          <label htmlFor="level" className="form-label">
+          <label htmlFor="level" className="form-label fs-4">
             Level
           </label>
           <select
@@ -46,7 +46,7 @@ export default function AddExplanation() {
             <option value="medium">medium</option>
             <option value="hard">hard</option>
           </select>
-          <label htmlFor="explanation" className="form-label">
+          <label htmlFor="explanation" className="form-label fs-4">
             Explanation
           </label>
           <textarea
@@ -75,5 +75,19 @@ export default function AddExplanation() {
 }
 
 function Explanation({ explanation }) {
-  return <Markdown remarkPlugins={[remarkGfm]}>{explanation}</Markdown>;
+  return (
+    <>
+      <label className="form-label fs-4">The Result</label>
+      <div style={{ height: "696px" }}>
+        <Markdown
+          remarkPlugins={[remarkGfm]}
+          className={
+            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto"
+          }
+        >
+          {explanation}
+        </Markdown>
+      </div>
+    </>
+  );
 }

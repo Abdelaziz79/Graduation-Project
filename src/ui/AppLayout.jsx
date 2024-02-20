@@ -22,13 +22,13 @@ export default function AppLayout() {
         <NavBar />
         <SliderToggleButton />
         <main className="overflow-auto" style={{ height: "92vh" }}>
-          <Container className="h-100 my-3 mx-auto ">
+          <div className="h-100 my-3 mx-auto p-3 ">
             <Row>
               <Col sm={12} md={12} lg={9} className="mx-auto">
                 <Outlet />
               </Col>
             </Row>
-          </Container>
+          </div>
         </main>
       </Col>
     </Row>
