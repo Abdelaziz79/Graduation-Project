@@ -24,7 +24,7 @@ export default function AppLayout() {
         <main className="overflow-auto" style={{ height: "92vh" }}>
           <div className="h-100 my-3 mx-auto p-3 ">
             <Row>
-              <Col sm={12} md={12} lg={9} className="mx-auto">
+              <Col sm={12} md={12} lg={10} className="mx-auto">
                 <Outlet />
               </Col>
             </Row>

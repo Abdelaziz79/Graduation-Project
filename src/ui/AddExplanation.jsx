@@ -3,22 +3,32 @@ import { Button, Col, Row } from "react-bootstrap";
 
 import Explanation from "./Explanation";
 import AddQuiz from "./AddQuiz";
+import { useNavigate } from "react-router-dom";
+import { usePreviewTopic } from "../context/PreviewTopicContext";
+
+const MemoizedExplanation = React.memo(Explanation);
 
 export default function AddExplanation() {
+  const { setNewTopic } = usePreviewTopic();
+
   const [questions, setQuestions] = useState([]);
 
   const [explanation, setExplanation] = useState("");
-  const [topic, setTopic] = useState("");
+  const [topicName, setTopicName] = useState("");
   const [level, setLevel] = useState("easy");
   const [title, setTitle] = useState("");
 
   const [showQuiz, setShowQuiz] = useState(false);
 
+  const [topic, setTopic] = useState();
+
+  const navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
-    if (!topic || !level || !title || !explanation) return;
+    if (!topicName || !level || !title || !explanation) return;
     const newExplanation = {
-      topic,
+      topicName,
       title,
       level,
       explanation,
@@ -26,12 +36,15 @@ export default function AddExplanation() {
     };
 
     console.log(newExplanation);
-    setExplanation("");
-    setTopic("");
-    setLevel("easy");
-    setTitle("");
-    setQuestions([]);
-    setShowQuiz(false);
+    setTopic(newExplanation);
+    setNewTopic(newExplanation);
+    navigate("/preview");
+    // setExplanation("");
+    // setTopic("");
+    // setLevel("easy");
+    // setTitle("");
+    // setQuestions([]);
+    // setShowQuiz(false);
   }
 
   return (
@@ -49,8 +62,8 @@ export default function AddExplanation() {
                 id="topic"
                 className=" form-control mb-3"
                 placeholder="topic name"
-                value={topic}
-                onChange={(e) => setTopic(e.target.value)}
+                value={topicName}
+                onChange={(e) => setTopicName(e.target.value)}
               />
             </Col>
             <Col lg={6} md={6} sm={12}>
@@ -101,7 +114,7 @@ export default function AddExplanation() {
         </form>
       </Col>
       <Col sm={12} md={12} lg={6} className="overflow-auto no-scroll-width  ">
-        <Explanation explanation={explanation} />
+        <MemoizedExplanation explanation={explanation} />
       </Col>
       <Col>
         <div className="">

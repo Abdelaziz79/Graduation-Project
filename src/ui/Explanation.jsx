@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { memo } from "react";
 
 export default function Explanation({ explanation }) {
   return (
@@ -15,7 +16,7 @@ export default function Explanation({ explanation }) {
           remarkPlugins={[remarkGfm]}
           children={explanation}
           components={{
-            code(props) {
+            code: memo(function Code(props) {
               const { children, className, node, ...rest } = props;
               const match = /language-(\w+)/.exec(className || "");
               return match ? (
@@ -31,10 +32,10 @@ export default function Explanation({ explanation }) {
                   {children}
                 </code>
               );
-            },
+            }),
           }}
           className={
-            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto explanation-window  "
+            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto explanation-window "
           }
         />
       </div>
