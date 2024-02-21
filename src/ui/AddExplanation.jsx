@@ -101,7 +101,7 @@ export default function AddExplanation() {
             Explanation
           </label>
           <textarea
-            className=" no-scroll-width form-control bg-body-tertiary border p-3 rounded-3 w-100 h-100"
+            className=" no-scroll-width form-control bg-body-tertiary border p-3  rounded-3  h-100"
             placeholder="Add Explanation Here"
             style={{ resize: "none", minHeight: "500px" }}
             required
