@@ -9,7 +9,7 @@ import { memo } from "react";
 export default function Explanation({ explanation }) {
   return (
     <>
-      <label className="form-label fs-4">The Result</label>
+      <label className="form-label fs-4 ">The Result</label>
       <div style={{ height: "696px" }}>
         <Markdown
           rehypePlugins={[rehypeRaw]}
@@ -35,7 +35,7 @@ export default function Explanation({ explanation }) {
             }),
           }}
           className={
-            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto explanation-window "
+            "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto explanation-window border"
           }
         />
       </div>

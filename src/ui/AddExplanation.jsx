@@ -90,7 +90,7 @@ export default function AddExplanation() {
                 type="text"
                 name="title"
                 id="title"
-                className=" form-control mb-3"
+                className=" form-control mb-3 "
                 placeholder="title name"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -101,7 +101,7 @@ export default function AddExplanation() {
             Explanation
           </label>
           <textarea
-            className=" no-scroll-width form-control bg-body-tertiary border-0 p-3 rounded-3 w-100 h-100"
+            className=" no-scroll-width form-control bg-body-tertiary border p-3 rounded-3 w-100 h-100"
             placeholder="Add Explanation Here"
             style={{ resize: "none", minHeight: "500px" }}
             required

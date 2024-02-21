@@ -13,7 +13,7 @@ export default function AppLayout() {
   return (
     <Row className="m-0 p-0 main">
       <Col
-        className={`trans col-2 m-0 p-0  `}
+        className={` trans col-2 m-0 p-0  `}
         style={{ width: show ? "200px" : "0px" }}
       >
         <SideBar />
