@@ -1,0 +1,120 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    gap: 10px;
+    padding:5px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #7b82b33a;
+  }
+  form label{
+    margin-top: 5px;
+    display: inline;
+    margin-bottom: 5px;
+  }
+  form input button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input[type="text"],input[type="email"],input[type="password"]{
+    width: 40%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+  form button{
+    width: 15%;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    border:none;
+  }
+  .cancel{
+    background-color: #fff;
+    position: relative;
+    top: 50px;
+    left: 620px;
+  }
+  .update{
+    padding: 6px;
+    background-color: rgba(38, 0, 255, 0.871);
+    color: white;
+    position: relative;
+    left: 790px;
+    bottom: 5px;
+  }
+  .choose{
+    background-color:rgba(38, 0, 255, 0.871);
+    color: white;
+  }
+  .file{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    left: 25px;
+    top: 40px;
+  }
+  .file label{
+    position: relative;
+    right:10px;
+    margin-right:122px;
+  }
+  .file button{
+    margin-right: 5px;
+  }
+  .email{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position:relative;
+    left:15px;
+    top:30px;
+  }
+  .email input{
+    background-color: #7b82b33a;;
+  }
+  .fullname{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position:relative;
+    left:15px;
+    top:30px;
+  }
+  .email label{
+    margin-right: 130px;
+  }
+  .fullname label{
+    margin-right: 160px;
+  }
+  .no{
+    position: relative;
+    top: 5px;
+  }
+  .password{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    left:15px;
+    top:30px;
+  }
+  .password label{
+    margin-right: 50px;
+  }
+  .confirmpassword{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    left:15px;
+    top:30px;
+  }
+  .confirmpassword label{
+    margin-right: 113px;
+  }
+  
