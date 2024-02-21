@@ -36,7 +36,6 @@ const Code = memo(function Code(props) {
 export default function Explanation({ explanation }) {
   return (
     <>
-      <label className="form-label fs-4 ">The Result</label>
       <div style={{ height: "696px" }}>
         <Markdown
           rehypePlugins={[rehypeRaw]}

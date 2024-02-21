@@ -20,8 +20,6 @@ export default function AddExplanation() {
 
   const [showQuiz, setShowQuiz] = useState(false);
 
-  const [topic, setTopic] = useState();
-
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -36,23 +34,16 @@ export default function AddExplanation() {
     };
 
     console.log(newExplanation);
-    setTopic(newExplanation);
     setNewTopic(newExplanation);
     navigate("/preview");
-    // setExplanation("");
-    // setTopic("");
-    // setLevel("easy");
-    // setTitle("");
-    // setQuestions([]);
-    // setShowQuiz(false);
   }
 
   return (
     <Row className="">
-      <Col sm={12} md={12} lg={6} className="">
+      <Col sm={12} md={12} lg={6}>
         <form>
-          <Row>
-            <Col lg={6} md={6} sm={12}>
+          <Row className="h-25">
+            <Col>
               <label htmlFor="topic" className="form-label fs-4">
                 Topic
               </label>
@@ -60,20 +51,20 @@ export default function AddExplanation() {
                 type="text"
                 name="topic"
                 id="topic"
-                className=" form-control mb-3"
+                className=" form-control "
                 placeholder="topic name"
                 value={topicName}
                 onChange={(e) => setTopicName(e.target.value)}
               />
             </Col>
-            <Col lg={6} md={6} sm={12}>
+            <Col>
               <label htmlFor="level" className="form-label fs-4">
                 Level
               </label>
               <select
                 name="level"
                 id="level"
-                className="form-select mb-3"
+                className="form-select "
                 value={level}
                 onChange={(e) => setLevel(e.target.value)}
               >
@@ -82,40 +73,51 @@ export default function AddExplanation() {
                 <option value="hard">hard</option>
               </select>
             </Col>
-            <Col lg={12} md={12} sm={12}>
-              <label htmlFor="title" className="form-label fs-4">
-                Title
+            <Col lg={12}>
+              <Col>
+                <label htmlFor="title" className="form-label fs-4">
+                  Title
+                </label>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  className=" form-control  "
+                  placeholder="title name"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </Col>
+            </Col>
+          </Row>
+          <Row className="h-75">
+            <Col className="">
+              <label htmlFor="explanation" className="form-label fs-4 ">
+                Explanation
               </label>
-              <input
+              <textarea
+                className=" no-scroll-width form-control bg-body-tertiary border rounded-3 "
+                placeholder="Add Explanation Here"
+                style={{ resize: "none" }}
+                required
+                rows={21}
                 type="text"
-                name="title"
-                id="title"
-                className=" form-control mb-3 "
-                placeholder="title name"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                id="explanation"
+                value={explanation}
+                onChange={(e) => setExplanation(e.target.value)}
+                name="explanation"
               />
             </Col>
           </Row>
-          <label htmlFor="explanation" className="form-label fs-4">
-            Explanation
-          </label>
-          <textarea
-            className=" no-scroll-width form-control bg-body-tertiary border p-3  rounded-3  h-100"
-            placeholder="Add Explanation Here"
-            style={{ resize: "none", minHeight: "500px" }}
-            required
-            type="text"
-            id="explanation"
-            value={explanation}
-            onChange={(e) => setExplanation(e.target.value)}
-            name="explanation"
-          />
         </form>
       </Col>
-      <Col sm={12} md={12} lg={6} className="overflow-auto no-scroll-width  ">
+
+      <Col className="overflow-auto" sm={12} md={12} lg={6}>
+        <label className="form-label fs-4 ">The Result</label>
+
         <MemoizedExplanation explanation={explanation} />
       </Col>
+
       <Col>
         <div className="">
           <Button
