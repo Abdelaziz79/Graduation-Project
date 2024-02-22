@@ -6,6 +6,7 @@ import {
   HiOutlineArrowRightOnRectangle,
   HiOutlineBell,
 } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -15,7 +16,9 @@ export default function NavBar() {
           <Avatar src="https://picsum.photos/200" alt="avatar" />
         </li>
         <li>
-          <span className="fw-bold">profile</span>
+          <Link to="/user/1">
+            <span className="fw-bold">profile</span>
+          </Link>
         </li>
         <li>
           <span>

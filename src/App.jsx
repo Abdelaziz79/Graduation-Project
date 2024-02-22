@@ -7,6 +7,10 @@ import Toipcs from "./pages/Toipcs";
 import Dashboard from "./pages/Dashboard";
 import Preview from "./pages/Preview";
 import PreviewTopicProvider from "./context/PreviewTopicContext";
+import AddPost from "./ui/AddPost";
+import UserUpdate from "./ui/UserUpdate";
+import AddExplanation from "./ui/AddExplanation";
+import UserInfo from "./ui/UserInfo";
 
 function App() {
   return (
@@ -22,7 +26,12 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
-            <Route path="user" element={<UserPage />} />
+            <Route path="user" element={<UserPage />}>
+              <Route path=":id" index element={<UserInfo />} />
+              <Route path="addpost" element={<AddPost />} />
+              <Route path="update" element={<UserUpdate />} />
+              <Route path="addtopic" element={<AddExplanation />} />
+            </Route>
             <Route path="toipcs" element={<Toipcs />} />
             <Route path="posts" element={<Posts />} />
             <Route path="preview" element={<Preview />} />

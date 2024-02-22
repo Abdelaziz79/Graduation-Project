@@ -15,7 +15,7 @@ export default function AppLayout() {
       <Col className={` p-0 m-0 col-2 trans ${show ? "" : "hide"} `}>
         <SideBar />
       </Col>
-      <Col className={`main p-0 m-0 trans ${show ? "col-10" : "col-12"} `}>
+      <Col className={` p-0 m-0 trans ${show ? "col-10" : "col-12"} `}>
         <NavBar />
         <SliderToggleButton />
         <main className="overflow-auto p-3">
