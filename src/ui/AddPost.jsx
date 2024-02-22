@@ -27,10 +27,13 @@ export default function AddPost() {
           type="text"
           name="title"
           id="title"
+          value={title}
+          required
+          placeholder="title"
           onChange={(e) => setTitle(e.target.value)}
         />
         <label htmlFor="content" className="form-label fs-4">
-          Content
+          Content (accept markdown)
         </label>
         <textarea
           className="form-control"
@@ -38,6 +41,9 @@ export default function AddPost() {
           id="content"
           cols="30"
           rows="10"
+          value={content}
+          required
+          placeholder="content here"
           onChange={(e) => setContent(e.target.value)}
         ></textarea>
         <button className="btn btn-primary mt-3" onClick={handleSubmit}>

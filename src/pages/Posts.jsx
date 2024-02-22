@@ -6,7 +6,7 @@ const posts = [
     id: 1,
     title: "Post 1",
     content:
-      "ahmed said that every thing is good and bad in same time ahmed said that every thing is good and bad in same time ahmed said that every thing is good and bad in same time ahmed said that every thing is good and bad in same time ahmed said that every thing is good and bad in same time",
+      "```js\nconsole.log('hello world')\n```\n\n# React + Vite\n\nThis template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.\n\nCurrently, two official plugins are available:\n\n- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh\n- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh\n\n## please read this docs to create explanations for topics\n\n[read now](https://commonmark.org/help/)\n[example](https://remarkjs.github.io/react-markdown/)\n",
     date: "2022-01-01",
     author: {
       name: "Ahmed",

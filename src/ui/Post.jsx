@@ -2,6 +2,7 @@ import Avatar from "./Avatar";
 
 import { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import MarkDown from "./MarkDown";
 
 export default function Post({ post }) {
   const [showComments, setShowComments] = useState(false);
@@ -28,7 +29,12 @@ export default function Post({ post }) {
           />
           <Card.Body>
             <Card.Title>{post.title}</Card.Title>
-            <Card.Text>{post.content}</Card.Text>
+            <div
+              className="no-scroll-width  "
+              style={{ maxHeight: "500px", overflowY: "auto" }}
+            >
+              <MarkDown markdown={post.content} />
+            </div>
             <hr />
             <span>🔼 20 </span>
             <span>🔽 12 </span>
