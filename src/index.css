@@ -17,6 +17,7 @@
   top: 50%;
   background-color: #f8f9fa;
   color: #6c757d;
+  transform: translate(-50%, 0);
 }
 
 .sidebar-toggle-button:hover {
@@ -101,4 +102,11 @@
 .explanation-window img {
   width: 50%;
   object-fit: cover;
+}
+
+.hide {
+  width: 0px;
+}
+.show {
+  width: 200px;
 }
