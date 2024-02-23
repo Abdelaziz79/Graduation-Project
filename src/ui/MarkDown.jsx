@@ -1,19 +1,10 @@
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
-import styled from "styled-components";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { memo } from "react";
-
-const StyledBlockquote = styled.blockquote`
-  border-left: 2px solid #333;
-  padding: 0 20px;
-  margin: 10px 0;
-  color: #666;
-  font-style: italic;
-`;
 
 const Code = memo(function Code(props) {
   const { children, className, node, ...rest } = props;
@@ -40,7 +31,6 @@ export default function MarkDown({ markdown }) {
       remarkPlugins={[remarkGfm]}
       children={markdown}
       components={{
-        blockquote: StyledBlockquote,
         code: Code,
       }}
       className={

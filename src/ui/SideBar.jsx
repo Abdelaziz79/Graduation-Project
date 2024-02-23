@@ -7,6 +7,7 @@ import {
   HiMiniBookOpen,
   HiMiniGlobeAsiaAustralia,
 } from "react-icons/hi2";
+import Footer from "./Footer";
 
 export default function SideBar() {
   const { show } = useSliderToggle();
@@ -46,6 +47,7 @@ export default function SideBar() {
           </span>
         </NavLink>
       </div>
+      <Footer />
     </div>
   );
 }

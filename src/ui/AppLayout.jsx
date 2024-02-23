@@ -11,14 +11,14 @@ export default function AppLayout() {
   const { show } = useSliderToggle();
 
   return (
-    <Row className="m-0 p-0 main">
+    <Row className="m-0 p-0 main ">
       <Col className={` p-0 m-0 col-2 trans ${show ? "" : "hide"} `}>
         <SideBar />
       </Col>
-      <Col className={` p-0 m-0 trans ${show ? "col-10" : "col-12"} `}>
+      <Col className={` p-0 m-0 trans   ${show ? "col-10" : "col-12"} `}>
         <NavBar />
         <SliderToggleButton />
-        <main className="overflow-auto p-3">
+        <main className="p-3 overflow-auto main-window  ">
           <Container>
             <Outlet />
           </Container>

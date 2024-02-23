@@ -96,11 +96,10 @@ export default function AddExplanation() {
                 Explanation
               </label>
               <textarea
-                className=" no-scroll-width form-control bg-body-tertiary border rounded-3 "
+                className="resize-none no-scroll-width form-control bg-body-tertiary border rounded-3 "
                 placeholder="Add Explanation Here"
-                style={{ resize: "none" }}
                 required
-                rows={21}
+                rows={17}
                 type="text"
                 id="explanation"
                 value={explanation}
@@ -114,7 +113,6 @@ export default function AddExplanation() {
 
       <Col className="overflow-auto" sm={12} md={12} lg={6}>
         <label className="form-label fs-4 ">The Result</label>
-
         <MemoizedExplanation explanation={explanation} />
       </Col>
 
