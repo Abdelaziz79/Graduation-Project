@@ -154,13 +154,11 @@ blockquote {
 }
 
 .main-window {
-  min-height: 93vh;
-  max-height: 93vh;
+  height: 90vh;
 }
 
 .nav-height {
-  min-height: 7vh;
-  max-height: 7vh;
+  height: 9vh;
 }
 .resize-none {
   resize: none;

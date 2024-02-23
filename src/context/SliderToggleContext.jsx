@@ -5,9 +5,8 @@ const SliderToggleContext = createContext();
 export default function SliderToggleProvider({ children }) {
   const [show, setShow] = useState(true);
 
-  const handleToggle = setShow;
   return (
-    <SliderToggleContext.Provider value={{ show, handleToggle }}>
+    <SliderToggleContext.Provider value={{ show, setShow }}>
       {children}
     </SliderToggleContext.Provider>
   );
