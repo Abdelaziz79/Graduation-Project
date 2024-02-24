@@ -11,7 +11,10 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <div className="nav-height">
-      <ul className="border-bottom h-100 d-flex align-items-center nav justify-content-end bg-body-tertiary p-3 gap-3">
+      <ul
+        className="border-bottom  d-flex align-items-center nav justify-content-end bg-body-tertiary p-3 gap-3"
+        style={{ height: "70px" }}
+      >
         <li>
           <Avatar src="https://picsum.photos/200" alt="avatar" />
         </li>

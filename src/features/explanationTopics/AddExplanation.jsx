@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 
-import Explanation from "./Explanation";
+import Explanation from "../explanationPage/Explanation";
 import AddQuiz from "./AddQuiz";
 import { useNavigate } from "react-router-dom";
-import { usePreviewTopic } from "../context/PreviewTopicContext";
+import { usePreviewTopic } from "../../context/PreviewTopicContext";
 
 const MemoizedExplanation = React.memo(Explanation);
 

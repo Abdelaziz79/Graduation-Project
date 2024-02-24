@@ -1,4 +1,4 @@
-import MarkDown from "./MarkDown";
+import MarkDown from "../../ui/MarkDown";
 
 export default function Explanation({ explanation }) {
   return (
