@@ -7,7 +7,7 @@ export default function UpdateUserInfo() {
       <form>
         <div className="d-flex flex-column gap-3 w-75">
           <div className="d-flex  gap-3  ">
-            <label className=" form-label w-25" for="Email">
+            <label className=" form-label w-25" htmlFor="Email">
               Email
             </label>
             <input
@@ -20,7 +20,7 @@ export default function UpdateUserInfo() {
             />
           </div>
           <div className="d-flex  gap-3 ">
-            <label className=" form-label w-25" for="name">
+            <label className=" form-label w-25" htmlFor="name">
               Name
             </label>
             <input
@@ -33,7 +33,7 @@ export default function UpdateUserInfo() {
             />
           </div>
           <div className="d-flex  gap-3 ">
-            <label className=" form-label w-25" for="avatar">
+            <label className=" form-label w-25" htmlFor="avatar">
               Avatar
             </label>
             <input

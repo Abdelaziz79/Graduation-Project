@@ -8,7 +8,7 @@ export default function UpdateUserPassword() {
         <div className="d-flex flex-column gap-3 w-75">
           <div className="d-flex flex-column gap-3 ">
             <div className="d-flex  gap-3 ">
-              <label className=" form-label w-25" for="password">
+              <label className=" form-label w-25" htmlFor="password">
                 Password
               </label>
               <input
@@ -21,7 +21,7 @@ export default function UpdateUserPassword() {
               />
             </div>
             <div className="d-flex  gap-3  ">
-              <label className=" form-label w-25" for="confirm-password">
+              <label className=" form-label w-25" htmlFor="confirm-password">
                 Confirm Password
               </label>
               <input
