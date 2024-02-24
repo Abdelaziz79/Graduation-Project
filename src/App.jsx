@@ -9,11 +9,13 @@ import Preview from "./pages/Preview";
 import PreviewTopicProvider from "./context/PreviewTopicContext";
 import AddPost from "./ui/AddPost";
 import UserUpdate from "./ui/UserUpdate";
-import AddExplanation from "./features/explanationTopics/AddExplanation";
+import AddExplanation from "./features/explanation/AddExplanation";
 import UserInfo from "./ui/UserInfo";
+import "react-toastify/dist/ReactToastify.css";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ToastContainer } from "react-toastify";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -50,6 +52,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        <ToastContainer autoClose={3000} position="top-center" />
       </QueryClientProvider>
     </SliderToggleProvider>
   );

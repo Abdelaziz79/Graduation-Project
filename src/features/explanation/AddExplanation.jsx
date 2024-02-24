@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 
-import Explanation from "../explanationPage/Explanation";
+import Explanation from "../explanation/Explanation";
 import AddQuiz from "./AddQuiz";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { usePreviewTopic } from "../../context/PreviewTopicContext";
+import useCreateExplanation from "./useCreateExplanation";
 
 const MemoizedExplanation = React.memo(Explanation);
 
@@ -20,22 +21,33 @@ export default function AddExplanation() {
 
   const [showQuiz, setShowQuiz] = useState(false);
 
-  const navigate = useNavigate();
+  const { createExplanation, isLoading } = useCreateExplanation();
+
+  // const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!topicName || !level || !title || !explanation) return;
     const newExplanation = {
-      topicName,
+      topics: topicName,
       title,
       level,
       explanation,
-      questions,
     };
+    createExplanation(newExplanation, {
+      onSuccess: () => {
+        setTopicName("");
+        setLevel("");
+        setTitle("");
+        setExplanation("");
+        setShowQuiz(false);
+      },
+    });
 
     console.log(newExplanation);
     setNewTopic(newExplanation);
-    navigate("/preview");
+
+    // navigate("/preview");
   }
 
   return (
@@ -54,6 +66,7 @@ export default function AddExplanation() {
                 className=" form-control "
                 placeholder="topic name"
                 value={topicName}
+                disabled={isLoading}
                 onChange={(e) => setTopicName(e.target.value)}
               />
             </Col>
@@ -62,6 +75,7 @@ export default function AddExplanation() {
                 Level
               </label>
               <select
+                disabled={isLoading}
                 name="level"
                 id="level"
                 className="form-select "
@@ -79,6 +93,7 @@ export default function AddExplanation() {
                   Title
                 </label>
                 <input
+                  disabled={isLoading}
                   type="text"
                   name="title"
                   id="title"
@@ -96,6 +111,7 @@ export default function AddExplanation() {
                 Explanation
               </label>
               <textarea
+                disabled={isLoading}
                 className="resize-none no-scroll-width form-control bg-body-tertiary border rounded-3 "
                 placeholder="Add Explanation Here"
                 required
@@ -119,6 +135,7 @@ export default function AddExplanation() {
       <Col>
         <div className="">
           <Button
+            disabled={isLoading}
             className=" btn-success mt-3"
             onClick={() => setShowQuiz((show) => !show)}
           >
@@ -131,7 +148,11 @@ export default function AddExplanation() {
           )}
         </div>
         <div className="mt-3">
-          <Button className=" btn-success " onClick={handleSubmit}>
+          <Button
+            className=" btn-success "
+            disabled={isLoading}
+            onClick={handleSubmit}
+          >
             Add
           </Button>
         </div>
