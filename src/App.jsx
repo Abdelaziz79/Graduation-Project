@@ -3,7 +3,7 @@ import AppLayout from "./ui/AppLayout";
 import UserPage from "./pages/UserPage";
 import Posts from "./pages/Posts";
 import SliderToggleProvider from "./context/SliderToggleContext";
-import Toipcs from "./pages/Toipcs";
+import Topics from "./pages/Topics";
 import Dashboard from "./pages/Dashboard";
 import Preview from "./pages/Preview";
 import PreviewTopicProvider from "./context/PreviewTopicContext";
@@ -16,6 +16,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
+import TheExplanationPage from "./features/topics/TheExplanationPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,7 +46,9 @@ function App() {
                 <Route path="update" element={<UserUpdate />} />
                 <Route path="addtopic" element={<AddExplanation />} />
               </Route>
-              <Route path="toipcs" element={<Toipcs />} />
+              <Route path="topics" element={<Topics />} />
+
+              <Route path="topics/:id" element={<TheExplanationPage />} />
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />

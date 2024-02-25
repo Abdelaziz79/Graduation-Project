@@ -81,6 +81,11 @@
   background-color: #dc3545;
 }
 
+.box a {
+  text-decoration: none;
+  color: #6c757d;
+}
+
 .box {
   transition: all 0.3s ease;
   cursor: pointer;
@@ -154,7 +159,7 @@ blockquote {
 }
 
 .main-window {
-  height: 90vh;
+  height: 92vh;
 }
 
 .nav-height {

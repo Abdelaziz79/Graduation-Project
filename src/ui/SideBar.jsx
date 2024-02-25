@@ -36,9 +36,9 @@ export default function SideBar() {
             <HiUser size={20} /> User
           </span>
         </NavLink>
-        <NavLink to="/toipcs">
+        <NavLink to="/topics">
           <span className="sidebar-button">
-            <HiMiniBookOpen size={20} /> Toipcs
+            <HiMiniBookOpen size={20} /> Topics
           </span>
         </NavLink>
         <NavLink to="/posts">
