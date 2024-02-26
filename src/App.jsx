@@ -17,6 +17,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
 import TheExplanationPage from "./features/topics/TheExplanationPage";
+import UpdateTopic from "./features/topics/UpdateTopic";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,8 +48,9 @@ function App() {
                 <Route path="addtopic" element={<AddExplanation />} />
               </Route>
               <Route path="topics" element={<Topics />} />
-
               <Route path="topics/:id" element={<TheExplanationPage />} />
+              <Route path="topics/edit/:id" element={<UpdateTopic />} />
+
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />

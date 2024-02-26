@@ -34,3 +34,28 @@ export async function createExplanation(topic) {
   }
   return data;
 }
+
+export async function updateExplanation(topic) {
+  const { data, error } = await supabase
+    .from("explanation_topics")
+    .update(topic)
+    .eq("id", topic.id)
+    .select();
+  if (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+  return data;
+}
+
+export async function deleteExplanation(id) {
+  const { data, error } = await supabase
+    .from("explanation_topics")
+    .delete()
+    .eq("id", id);
+  if (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+  return data;
+}
