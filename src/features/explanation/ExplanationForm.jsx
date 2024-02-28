@@ -1,45 +1,22 @@
-import React, { useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
-
+import React from "react";
+import { Col, Row } from "react-bootstrap";
 import Explanation from "./Explanation";
-import AddQuiz from "./AddQuiz";
-import { useNavigate } from "react-router-dom";
-import { usePreviewTopic } from "../context/PreviewTopicContext";
 
 const MemoizedExplanation = React.memo(Explanation);
 
-export default function AddExplanation() {
-  const { setNewTopic } = usePreviewTopic();
-
-  const [questions, setQuestions] = useState([]);
-
-  const [explanation, setExplanation] = useState("");
-  const [topicName, setTopicName] = useState("");
-  const [level, setLevel] = useState("easy");
-  const [title, setTitle] = useState("");
-
-  const [showQuiz, setShowQuiz] = useState(false);
-
-  const navigate = useNavigate();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!topicName || !level || !title || !explanation) return;
-    const newExplanation = {
-      topicName,
-      title,
-      level,
-      explanation,
-      questions,
-    };
-
-    console.log(newExplanation);
-    setNewTopic(newExplanation);
-    navigate("/preview");
-  }
-
+export default function ExplanationForm({
+  topicName,
+  setTopicName,
+  level,
+  setLevel,
+  isLoading,
+  explanation,
+  setExplanation,
+  title,
+  setTitle,
+}) {
   return (
-    <Row className="">
+    <Row>
       <Col sm={12} md={12} lg={6}>
         <form>
           <Row className="h-25">
@@ -54,6 +31,7 @@ export default function AddExplanation() {
                 className=" form-control "
                 placeholder="topic name"
                 value={topicName}
+                disabled={isLoading}
                 onChange={(e) => setTopicName(e.target.value)}
               />
             </Col>
@@ -62,6 +40,7 @@ export default function AddExplanation() {
                 Level
               </label>
               <select
+                disabled={isLoading}
                 name="level"
                 id="level"
                 className="form-select "
@@ -79,6 +58,7 @@ export default function AddExplanation() {
                   Title
                 </label>
                 <input
+                  disabled={isLoading}
                   type="text"
                   name="title"
                   id="title"
@@ -96,6 +76,7 @@ export default function AddExplanation() {
                 Explanation
               </label>
               <textarea
+                disabled={isLoading}
                 className="resize-none no-scroll-width form-control bg-body-tertiary border rounded-3 "
                 placeholder="Add Explanation Here"
                 required
@@ -114,27 +95,6 @@ export default function AddExplanation() {
       <Col className="overflow-auto" sm={12} md={12} lg={6}>
         <label className="form-label fs-4 ">The Result</label>
         <MemoizedExplanation explanation={explanation} />
-      </Col>
-
-      <Col>
-        <div className="">
-          <Button
-            className=" btn-success mt-3"
-            onClick={() => setShowQuiz((show) => !show)}
-          >
-            Add Quize
-          </Button>
-        </div>
-        <div>
-          {showQuiz && (
-            <AddQuiz questions={questions} setQuestions={setQuestions} />
-          )}
-        </div>
-        <div className="mt-3">
-          <Button className=" btn-success " onClick={handleSubmit}>
-            Add
-          </Button>
-        </div>
       </Col>
     </Row>
   );

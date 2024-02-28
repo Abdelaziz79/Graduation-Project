@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import AddExplanation from "../ui/AddExplanation";
+import AddExplanation from "../features/explanation/AddExplanation";
 import { Button } from "react-bootstrap";
 
 export default function Dashboard() {
   const [showExplanation, setShowExplanation] = useState(false);
+
   return (
     <div>
       <h1>Dashboard</h1>
