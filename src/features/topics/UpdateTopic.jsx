@@ -1,6 +1,6 @@
-import { useState } from "react";
 import ExplanationForm from "../explanation/ExplanationForm";
 
+import { useEffect, useState } from "react";
 import { useGetExplanationById } from "./useGetExplanationById";
 import { Button } from "react-bootstrap";
 import { useUpdateExplanation } from "./useUpdateExplanation";
@@ -13,10 +13,18 @@ export default function UpdateTopic() {
 
   const { explanation, isLoading: isLoading2 } = useGetExplanationById();
 
-  const [exp, setExp] = useState(explanation.explanation);
-  const [title, setTitle] = useState(explanation.title);
-  const [level, setLevel] = useState(explanation.level);
-  const [topics, setTopics] = useState(explanation.topics);
+  const [exp, setExp] = useState();
+  const [title, setTitle] = useState();
+  const [level, setLevel] = useState();
+  const [topics, setTopics] = useState();
+
+  useEffect(() => {
+    if (!explanation) return;
+    setExp(explanation.explanation);
+    setTitle(explanation.title);
+    setLevel(explanation.level);
+    setTopics(explanation.topics);
+  }, [explanation]);
 
   function handleUpdate(e) {
     e.preventDefault();

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import SliderToggleButton from "./SliderToggleButton";
 
+import { useEffect, useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import { useSliderToggle } from "../context/SliderToggleContext";
