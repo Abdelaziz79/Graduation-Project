@@ -168,3 +168,14 @@ blockquote {
 .resize-none {
   resize: none;
 }
+.statistic-box {
+  border: 1px solid #75757528;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  min-height: 350px;
+}
+.statistic-title {
+  color: #616970;
+  text-transform: capitalize;
+}

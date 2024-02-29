@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddExplanation from "../features/explanation/AddExplanation";
 import { Button } from "react-bootstrap";
+import DashboardPage from "../ui/DashboardPage";
 
 export default function Dashboard() {
   const [showExplanation, setShowExplanation] = useState(false);
@@ -17,6 +18,7 @@ export default function Dashboard() {
         {showExplanation ? "Hide" : "Add"} Explanation
       </Button>
       {showExplanation && <AddExplanation />}
+      <DashboardPage />
     </div>
   );
 }

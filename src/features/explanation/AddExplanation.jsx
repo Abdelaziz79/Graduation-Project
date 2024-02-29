@@ -32,9 +32,9 @@ export default function AddExplanation() {
     createExplanation(newExplanation, {
       onSuccess: () => {
         setTopicName("");
-        setLevel("");
         setTitle("");
         setExplanation("");
+        setLevel("easy");
         setShowQuiz(false);
       },
     });
