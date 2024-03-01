@@ -22,13 +22,13 @@ export default function DashboardPage() {
           <LevelStatistic />
         </StatisticBox>
       </Col>
-      <Col>
-        <StatisticBox title={"reports"} />
-      </Col>
-      <Col className="col-12">
+      <Col md={12} lg={12}>
         <StatisticBox title={"Explanations"}>
           <TableComp explanations={explanationTopics} />
         </StatisticBox>
+      </Col>
+      <Col>
+        <StatisticBox title={"reports"} />
       </Col>
     </Row>
   );

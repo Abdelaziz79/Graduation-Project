@@ -1,4 +1,3 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import UserPage from "./pages/UserPage";
 import Posts from "./pages/Posts";
@@ -11,13 +10,15 @@ import AddPost from "./ui/AddPost";
 import UserUpdate from "./ui/UserUpdate";
 import AddExplanation from "./features/explanation/AddExplanation";
 import UserInfo from "./ui/UserInfo";
+import TheExplanationPage from "./features/topics/TheExplanationPage";
+import UpdateTopic from "./features/topics/UpdateTopic";
+
 import "react-toastify/dist/ReactToastify.css";
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
-import TheExplanationPage from "./features/topics/TheExplanationPage";
-import UpdateTopic from "./features/topics/UpdateTopic";
 
 const queryClient = new QueryClient({
   defaultOptions: {

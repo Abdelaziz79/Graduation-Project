@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import {
   HiDocumentPlus,
   HiIdentification,
@@ -9,18 +9,25 @@ import {
 } from "react-icons/hi2";
 
 export default function UserPage() {
+  const navigate = useNavigate();
+  const url = window.location.pathname;
+  useEffect(() => {
+    if (url === "/user") {
+      navigate("/user/123");
+    }
+  }, [url, navigate]);
   return (
     <>
       <h1>UserPage</h1>
       <hr />
       <div className="user-button">
-        <NavLink to="id">
+        <NavLink to="123">
           <span className="">
             <HiIdentification size={20} />
             User Info
           </span>
         </NavLink>
-        <NavLink to="addPost">
+        <NavLink to="addpost">
           <span className="">
             <HiDocumentPlus size={20} />
             Add Post
