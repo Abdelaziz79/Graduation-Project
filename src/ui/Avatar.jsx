@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Avatar({ src, alt = "" }) {
+export default function Avatar({ src, alt = "", width = 40, height = 40 }) {
   return (
     <img
       src={src}
       alt={alt}
-      width="40px"
-      height="40px"
+      width={width}
+      height={height}
       className="rounded-circle"
     />
   );

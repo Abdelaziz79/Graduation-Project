@@ -43,7 +43,7 @@ function App() {
             >
               <Route index element={<Dashboard />} />
               <Route path="user" element={<UserPage />}>
-                <Route path=":id" index element={<UserInfo />} />
+                <Route path="account" index element={<UserInfo />} />
                 <Route path="addpost" element={<AddPost />} />
                 <Route path="update" element={<UserUpdate />} />
                 <Route path="addtopic" element={<AddExplanation />} />

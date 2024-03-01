@@ -16,7 +16,7 @@ export default function NavBar() {
           <Avatar src="https://picsum.photos/200" alt="avatar" />
         </li>
         <li>
-          <Link to="/user/123">
+          <Link to="/user/account">
             <span className="fw-bold">profile</span>
           </Link>
         </li>

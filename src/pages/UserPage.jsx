@@ -13,7 +13,7 @@ export default function UserPage() {
   const url = window.location.pathname;
   useEffect(() => {
     if (url === "/user") {
-      navigate("/user/123");
+      navigate("/user/account");
     }
   }, [url, navigate]);
   return (
@@ -21,7 +21,7 @@ export default function UserPage() {
       <h1>UserPage</h1>
       <hr />
       <div className="user-button">
-        <NavLink to="123">
+        <NavLink to="account">
           <span className="">
             <HiIdentification size={20} />
             User Info
