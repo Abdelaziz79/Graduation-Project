@@ -1,17 +1,20 @@
 import React, { useState } from "react";
+import { useCreatePost } from "./useCreatePost";
 
 export default function AddPost() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
+  const { createPost, isLoading } = useCreatePost();
   function handleSubmit(e) {
     e.preventDefault();
     if (!title || !content) return;
     const newPost = {
       title,
       content,
-      type: "post",
     };
+    createPost(newPost);
+    setTitle("");
+    setContent("");
     console.log(newPost);
   }
 
@@ -31,12 +34,15 @@ export default function AddPost() {
           required
           placeholder="title"
           onChange={(e) => setTitle(e.target.value)}
+          disabled={isLoading}
         />
         <label htmlFor="content" className="form-label fs-4">
           Content (accept markdown)
         </label>
         <textarea
           className="form-control"
+          type="text"
+          disabled={isLoading}
           name="content"
           id="content"
           cols="30"
@@ -46,7 +52,11 @@ export default function AddPost() {
           placeholder="content here"
           onChange={(e) => setContent(e.target.value)}
         ></textarea>
-        <button className="btn btn-primary mt-3" onClick={handleSubmit}>
+        <button
+          className="btn btn-primary mt-3"
+          disabled={isLoading}
+          onClick={handleSubmit}
+        >
           Add new post
         </button>
       </form>

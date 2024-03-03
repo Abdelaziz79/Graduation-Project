@@ -6,7 +6,7 @@ import Topics from "./pages/Topics";
 import Dashboard from "./pages/Dashboard";
 import Preview from "./pages/Preview";
 import PreviewTopicProvider from "./context/PreviewTopicContext";
-import AddPost from "./ui/AddPost";
+import AddPost from "./features/posts/AddPost";
 import UserUpdate from "./ui/UserUpdate";
 import AddExplanation from "./features/explanation/AddExplanation";
 import UserInfo from "./ui/UserInfo";

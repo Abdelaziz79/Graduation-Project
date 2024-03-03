@@ -1,8 +1,8 @@
-import Avatar from "./Avatar";
+import Avatar from "../../ui/Avatar";
 
 import { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import MarkDown from "./MarkDown";
+import MarkDown from "../../ui/MarkDown";
 
 export default function Post({ post }) {
   const [showComments, setShowComments] = useState(false);
@@ -12,7 +12,7 @@ export default function Post({ post }) {
         <Card className="w-100">
           <Card.Header>
             <div className="d-flex align-items-center gap-3">
-              <Avatar src={post.author?.image} alt="avatar" />
+              <Avatar src="https://i.pravatar.cc/300" alt="avatar" />
               <div>
                 <h6>{post.author?.name}</h6>
                 <span className="text-muted">{post.date}</span>
@@ -20,13 +20,13 @@ export default function Post({ post }) {
             </div>
           </Card.Header>
 
-          <Card.Img
+          {/* <Card.Img
             variant="top"
             src="https://usemynotes.com/wp-content/uploads/2021/02/what-are-arrays-in-java.jpg"
             alt="Card image"
             height="250px"
             className="rounded cover"
-          />
+          /> */}
           <Card.Body>
             <Card.Title>{post.title}</Card.Title>
             <div
