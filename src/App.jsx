@@ -51,7 +51,6 @@ function App() {
               <Route path="topics" element={<Topics />} />
               <Route path="topics/:id" element={<TheExplanationPage />} />
               <Route path="topics/edit/:id" element={<UpdateTopic />} />
-
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />
