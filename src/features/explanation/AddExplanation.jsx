@@ -5,6 +5,7 @@ import ExplanationForm from "./ExplanationForm";
 import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { usePreviewTopic } from "../../context/PreviewTopicContext";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function AddExplanation() {
   const { setNewTopic } = usePreviewTopic();
@@ -42,44 +43,50 @@ export default function AddExplanation() {
     console.log(newExplanation);
     setNewTopic(newExplanation);
   }
-
+  const { darkMode } = useDarkMode();
   return (
-    <Row className="">
-      <ExplanationForm
-        explanation={explanation}
-        setExplanation={setExplanation}
-        title={title}
-        setTitle={setTitle}
-        topicName={topicName}
-        setTopicName={setTopicName}
-        level={level}
-        setLevel={setLevel}
-      />
-      <Col>
-        <div className="">
-          <Button
-            disabled={isLoading}
-            className=" btn-success mt-3"
-            onClick={() => setShowQuiz((show) => !show)}
-          >
-            Add Quize
-          </Button>
-        </div>
-        <div>
-          {showQuiz && (
-            <AddQuiz questions={questions} setQuestions={setQuestions} />
-          )}
-        </div>
-        <div className="mt-3">
-          <Button
-            className=" btn-success "
-            disabled={isLoading}
-            onClick={handleSubmit}
-          >
-            Add
-          </Button>
-        </div>
-      </Col>
-    </Row>
+    <div
+      className={`${
+        darkMode ? "form-style-dark" : "form-style"
+      } p-3 rounded my-3`}
+    >
+      <Row className="">
+        <ExplanationForm
+          explanation={explanation}
+          setExplanation={setExplanation}
+          title={title}
+          setTitle={setTitle}
+          topicName={topicName}
+          setTopicName={setTopicName}
+          level={level}
+          setLevel={setLevel}
+        />
+        <Col>
+          <div className="">
+            <Button
+              disabled={isLoading}
+              className=" btn-success mt-3"
+              onClick={() => setShowQuiz((show) => !show)}
+            >
+              Add Quize
+            </Button>
+          </div>
+          <div>
+            {showQuiz && (
+              <AddQuiz questions={questions} setQuestions={setQuestions} />
+            )}
+          </div>
+          <div className="mt-3">
+            <Button
+              className=" btn-success "
+              disabled={isLoading}
+              onClick={handleSubmit}
+            >
+              Add
+            </Button>
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 }

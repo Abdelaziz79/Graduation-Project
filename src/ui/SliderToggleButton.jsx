@@ -5,13 +5,16 @@ import {
   HiOutlineChevronDoubleLeft,
   HiOutlineChevronDoubleRight,
 } from "react-icons/hi2";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function SliderToggleButton() {
   const { show, setShow } = useSliderToggle();
-
+  const { darkMode } = useDarkMode();
   return (
     <span
-      className="p-2 rounded-circle trans sidebar-toggle-button border"
+      className={` ${
+        darkMode ? "sidebar-toggle-button-dark" : " sidebar-toggle-button-light"
+      } p-2 rounded-circle trans sidebar-toggle-button `}
       onClick={() => setShow(!show)}
     >
       {show ? (

@@ -3,14 +3,16 @@ import Avatar from "../../ui/Avatar";
 import { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import MarkDown from "../../ui/MarkDown";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function Post({ post }) {
+  const { darkMode } = useDarkMode();
   const [showComments, setShowComments] = useState(false);
   return (
     <Row className="">
       <Col sm={12} md={12} lg={8} className="mx-auto">
-        <Card className="w-100">
-          <Card.Header>
+        <Card className={`w-100 ${darkMode ? "post-dark" : ""}`}>
+          <Card.Header className={`${darkMode ? "post-header-border" : ""}`}>
             <div className="d-flex align-items-center gap-3">
               <Avatar src="https://i.pravatar.cc/300" alt="avatar" />
               <div>
@@ -40,7 +42,7 @@ export default function Post({ post }) {
             <span>🔽 12 </span>
 
             <span
-              className="text-muted float-end pointer"
+              className=" float-end pointer"
               onClick={() => setShowComments(!showComments)}
             >
               2 comments

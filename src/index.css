@@ -24,9 +24,18 @@
   position: fixed;
   z-index: 1000;
   top: 50%;
+  transform: translate(-50%, 0);
+}
+
+.sidebar-toggle-button-light {
   background-color: #f8f9fa;
   color: #6c757d;
-  transform: translate(-50%, 0);
+  border: 1px solid #75757528;
+}
+.sidebar-toggle-button-dark {
+  background-color: #18191a;
+  color: #ffffff;
+  border: 1px solid #75757528;
 }
 
 .sidebar-toggle-button:hover {
@@ -223,6 +232,45 @@ blockquote {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.068);
 }
 
+.form-style-dark input {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+
+.form-style-dark input:focus {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+.form-style-dark input::placeholder {
+  color: #ffffffb0;
+}
+.form-style-dark textarea {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+.form-style-dark textarea:focus {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+.form-style-dark textarea::placeholder {
+  color: #ffffffb0;
+}
+
+.form-style-dark select {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+.form-style-dark button {
+  background-color: #3a3b3c;
+  color: #ffffff;
+  border: 1px solid #242526;
+}
+
 /* 0a0822 */
 .dark {
   background-color: #18191a;
@@ -246,7 +294,23 @@ blockquote {
 
 /* /////////////////////////// explanation \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
+.explanation-window-dark {
+  background-color: #3a3b3c;
+  border: 1px solid #75757528;
+}
+
 .explanation-window img {
   width: 50%;
   object-fit: cover;
+}
+
+/* /////////////////////////// post \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+.post-dark {
+  background-color: #242526;
+  border: 1px solid #75757528;
+  color: #ffffff;
+}
+
+.post-header-border {
+  border-bottom: 1px solid #75757528;
 }

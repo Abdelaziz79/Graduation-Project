@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useCreatePost } from "./useCreatePost";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function AddPost() {
   const [title, setTitle] = useState("");
@@ -17,9 +18,11 @@ export default function AddPost() {
     setContent("");
     console.log(newPost);
   }
-
+  const { darkMode } = useDarkMode();
   return (
-    <div>
+    <div
+      className={` ${darkMode ? "form-style-dark" : "form-style"} p-3 rounded `}
+    >
       <h1 className="mb-4 ">Add new post</h1>
       <form>
         <label htmlFor="title" className="form-label fs-4">

@@ -23,13 +23,6 @@ export default function HeatMap() {
           }
           return `color-github-${value.count}`;
         }}
-        tooltipDataAttrs={(value) => {
-          return {
-            "data-tip": `${value.date.toISOString().slice(0, 10)} has count: ${
-              value.count
-            }`,
-          };
-        }}
         showWeekdayLabels={true}
         onClick={(value) =>
           alert(`Clicked on value with count: ${value.count}`)

@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Explanation from "./Explanation";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const MemoizedExplanation = React.memo(Explanation);
 
@@ -15,6 +16,7 @@ export default function ExplanationForm({
   title,
   setTitle,
 }) {
+  const { darkMode } = useDarkMode();
   return (
     <Row>
       <Col sm={12} md={12} lg={6}>
@@ -77,7 +79,9 @@ export default function ExplanationForm({
               </label>
               <textarea
                 disabled={isLoading}
-                className="resize-none no-scroll-width form-control bg-body-tertiary border rounded-3 "
+                className={`resize-none no-scroll-width form-control ${
+                  darkMode ? " " : " bg-body-tertiary border"
+                } rounded-3 `}
                 placeholder="Add Explanation Here"
                 required
                 rows={17}

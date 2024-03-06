@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { memo } from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 const Code = memo(function Code(props) {
   const { children, className, node, ...rest } = props;
@@ -25,6 +26,7 @@ const Code = memo(function Code(props) {
 });
 
 export default function MarkDown({ markdown }) {
+  const { darkMode } = useDarkMode();
   return (
     <Markdown
       rehypePlugins={[rehypeRaw]}
@@ -33,9 +35,10 @@ export default function MarkDown({ markdown }) {
       components={{
         code: Code,
       }}
-      className={
-        "no-scroll-width rounded p-3 bg-body-tertiary h-100 overflow-auto explanation-window border"
-      }
+      className={`no-scroll-width rounded p-3 ${
+        darkMode ? "explanation-window-dark" : "bg-body-tertiary"
+      }  h-100 overflow-auto explanation-window "
+      `}
     />
   );
 }

@@ -1,8 +1,14 @@
 import React from "react";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function UpdateUserPassword() {
+  const { darkMode } = useDarkMode();
   return (
-    <div className="form-style p-3 rounded mt-3">
+    <div
+      className={` ${
+        darkMode ? "form-style-dark" : "form-style"
+      }  p-3 rounded mt-3`}
+    >
       <h3>Update user password</h3>
       <form>
         <div className="d-flex flex-column gap-3 w-75">
