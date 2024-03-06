@@ -2,7 +2,7 @@ import React from "react";
 
 export default function UpdateUserInfo() {
   return (
-    <div className="bg-body-tertiary p-3 rounded">
+    <div className=" p-3 rounded form-style">
       <h3 className="mb-4">Update user data</h3>
       <form>
         <div className="d-flex flex-column gap-3 w-75">

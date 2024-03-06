@@ -21,6 +21,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
+import DarkModeProvider from "./context/DarkModeContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,40 +31,42 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <SliderToggleProvider>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <BrowserRouter>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PreviewTopicProvider>
-                  <AppLayout />
-                </PreviewTopicProvider>
-              }
-            >
-              <Route index element={<Dashboard />} />
-              <Route path="user" element={<UserPage />}>
-                <Route path="account" index element={<UserInfo />} />
-                <Route path="addpost" element={<AddPost />} />
-                <Route path="update" element={<UserUpdate />} />
-                <Route path="addtopic" element={<AddExplanation />} />
+    <DarkModeProvider>
+      <SliderToggleProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <BrowserRouter>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PreviewTopicProvider>
+                    <AppLayout />
+                  </PreviewTopicProvider>
+                }
+              >
+                <Route index element={<Dashboard />} />
+                <Route path="user" element={<UserPage />}>
+                  <Route path="account" index element={<UserInfo />} />
+                  <Route path="addpost" element={<AddPost />} />
+                  <Route path="update" element={<UserUpdate />} />
+                  <Route path="addtopic" element={<AddExplanation />} />
+                </Route>
+                <Route path="topics" element={<Topics />} />
+                <Route path="topics/:id" element={<TheExplanationPage />} />
+                <Route path="topics/edit/:id" element={<UpdateTopic />} />
+                <Route path="posts" element={<Posts />} />
+                <Route path="preview" element={<Preview />} />
+                <Route path="*" element={<h1> Page Not Found</h1>} />
               </Route>
-              <Route path="topics" element={<Topics />} />
-              <Route path="topics/:id" element={<TheExplanationPage />} />
-              <Route path="topics/edit/:id" element={<UpdateTopic />} />
-              <Route path="posts" element={<Posts />} />
-              <Route path="preview" element={<Preview />} />
-              <Route path="*" element={<h1> Page Not Found</h1>} />
-            </Route>
-            <Route path="/login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-          </Routes>
-        </BrowserRouter>
-        <ToastContainer autoClose={3000} position="top-center" />
-      </QueryClientProvider>
-    </SliderToggleProvider>
+              <Route path="/login" element={<Login />} />
+              <Route path="/Register" element={<Register />} />
+            </Routes>
+          </BrowserRouter>
+          <ToastContainer autoClose={3000} position="top-center" />
+        </QueryClientProvider>
+      </SliderToggleProvider>
+    </DarkModeProvider>
   );
 }
 

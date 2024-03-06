@@ -8,12 +8,16 @@ import {
   HiMiniGlobeAsiaAustralia,
 } from "react-icons/hi2";
 import Footer from "./Footer";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function SideBar() {
   const { show } = useSliderToggle();
+  const { darkMode } = useDarkMode();
   return (
     <div
-      className={`border-end trans h-100 bg-body-tertiary d-flex flex-column align-items-center  overflow-x-hidden overflow-y-auto ${
+      className={`${
+        darkMode ? "sidebar-dark" : "border-end"
+      } trans h-100 d-flex flex-column align-items-center  overflow-x-hidden overflow-y-auto ${
         show ? "p-3" : "p-0"
       }`}
     >
@@ -25,7 +29,7 @@ export default function SideBar() {
         className="rounded-circle"
       />
       <p className="lead fw-bold ">CodeRoad</p>
-      <div className="sidebar-div ">
+      <div className={`${darkMode ? "sidebar-div-dark" : ""} sidebar-div `}>
         <NavLink to="/">
           <span className="sidebar-button">
             <HiHome size={20} /> Home

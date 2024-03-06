@@ -2,7 +2,7 @@ import React from "react";
 
 export default function UpdateUserPassword() {
   return (
-    <div className="bg-body-tertiary p-3 rounded mt-3">
+    <div className="form-style p-3 rounded mt-3">
       <h3>Update user password</h3>
       <form>
         <div className="d-flex flex-column gap-3 w-75">
