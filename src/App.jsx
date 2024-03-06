@@ -1,4 +1,6 @@
 import AppLayout from "./ui/AppLayout";
+import Login from "./ui/Login";
+import Register from "./ui/Register";
 import UserPage from "./pages/UserPage";
 import Posts from "./pages/Posts";
 import SliderToggleProvider from "./context/SliderToggleContext";
@@ -53,6 +55,8 @@ function App() {
               <Route path="topics/edit/:id" element={<UpdateTopic />} />
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/Register" element={<Register />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />
             </Route>
           </Routes>
