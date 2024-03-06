@@ -55,10 +55,10 @@ function App() {
               <Route path="topics/edit/:id" element={<UpdateTopic />} />
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/Register" element={<Register />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />
             </Route>
+            <Route path="/login" element={<Login />} />
+            <Route path="/Register" element={<Register />} />
           </Routes>
         </BrowserRouter>
         <ToastContainer autoClose={3000} position="top-center" />
