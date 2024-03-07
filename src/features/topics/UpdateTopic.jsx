@@ -5,6 +5,7 @@ import { useGetExplanationById } from "./useGetExplanationById";
 import { Button } from "react-bootstrap";
 import { useUpdateExplanation } from "./useUpdateExplanation";
 import { useNavigate } from "react-router-dom";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function UpdateTopic() {
   const navigate = useNavigate();
@@ -44,23 +45,29 @@ export default function UpdateTopic() {
       },
     });
   }
-
+  const { darkMode } = useDarkMode();
   return (
     <>
-      <ExplanationForm
-        explanation={exp}
-        isLoading={isLoading1 || isLoading2}
-        title={title}
-        level={level}
-        topicName={topics}
-        setExplanation={setExp}
-        setTitle={setTitle}
-        setLevel={setLevel}
-        setTopicName={setTopics}
-      />
-      <Button className="mt-3" variant="success" onClick={handleUpdate}>
-        Update
-      </Button>
+      <div
+        className={`${
+          darkMode ? "form-style-dark" : "form-style"
+        } p-3 rounded my-3`}
+      >
+        <ExplanationForm
+          explanation={exp}
+          isLoading={isLoading1 || isLoading2}
+          title={title}
+          level={level}
+          topicName={topics}
+          setExplanation={setExp}
+          setTitle={setTitle}
+          setLevel={setLevel}
+          setTopicName={setTopics}
+        />
+        <Button className="mt-3" variant="success" onClick={handleUpdate}>
+          Update
+        </Button>
+      </div>
     </>
   );
 }
