@@ -7,12 +7,19 @@ import {
   HiOutlinePencilSquare,
   HiOutlineTrash,
 } from "react-icons/hi2";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function TableComp({ explanations }) {
   const { deleteExplanation, isLoading } = useDeleteExplanation();
-
+  const { darkMode } = useDarkMode();
   return (
-    <Table striped bordered hover>
+    <Table
+      striped
+      bordered
+      hover
+      responsive
+      className={` ${darkMode ? "table-dark" : ""} `}
+    >
       <thead>
         <tr>
           <th></th>
@@ -22,13 +29,15 @@ export default function TableComp({ explanations }) {
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody className="">
         {explanations?.map((explanation, index) => (
           <tr key={explanation.id}>
             <td>
               <Link
                 to={`/topics/${explanation.id}`}
-                className="text-decoration-none text-dark"
+                className={`text-decoration-none ${
+                  darkMode ? "text-light" : "text-dark"
+                }`}
               >
                 {index + 1}
               </Link>
@@ -36,7 +45,9 @@ export default function TableComp({ explanations }) {
             <td>
               <Link
                 to={`/topics/${explanation.id}`}
-                className="text-decoration-none text-dark"
+                className={`text-decoration-none ${
+                  darkMode ? "text-light" : "text-dark"
+                }`}
               >
                 {explanation.title}
               </Link>
@@ -44,7 +55,9 @@ export default function TableComp({ explanations }) {
             <td>
               <Link
                 to={`/topics/${explanation.id}`}
-                className="text-decoration-none text-dark"
+                className={`text-decoration-none ${
+                  darkMode ? "text-light" : "text-dark"
+                }`}
               >
                 {explanation.topics?.split("-").join(", ")}
               </Link>
@@ -52,7 +65,9 @@ export default function TableComp({ explanations }) {
             <td>
               <Link
                 to={`/topics/${explanation.id}`}
-                className="text-decoration-none text-dark"
+                className={`text-decoration-none ${
+                  darkMode ? "text-light" : "text-dark"
+                }`}
               >
                 {explanation.level}
               </Link>
@@ -60,7 +75,7 @@ export default function TableComp({ explanations }) {
             <td>
               <Link>
                 <button
-                  className="btn  "
+                  className={`btn ${darkMode ? "text-light" : "text-dark"}`}
                   disabled={isLoading}
                   onClick={() => deleteExplanation(explanation.id)}
                 >
@@ -68,12 +83,18 @@ export default function TableComp({ explanations }) {
                 </button>
               </Link>
               <Link to={`/topics/edit/${explanation.id}`}>
-                <button className="btn " disabled={isLoading}>
+                <button
+                  className={`btn  ${darkMode ? "text-light" : "text-dark"}`}
+                  disabled={isLoading}
+                >
                   <HiOutlinePencilSquare size={20} />
                 </button>
               </Link>
               <Link to={`/topics/${explanation.id}`}>
-                <button className="btn " disabled={isLoading}>
+                <button
+                  className={`btn ${darkMode ? "text-light" : "text-dark"}`}
+                  disabled={isLoading}
+                >
                   <HiOutlineArrowUpOnSquare size={20} />
                 </button>
               </Link>

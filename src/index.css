@@ -62,16 +62,24 @@
   width: 200px;
   border-radius: 5px;
 }
-/* #3a3b3c */
-.sidebar-div a:hover {
+
+.sidebar-div-light-hover a:hover {
   background-color: #ebebeb;
   color: #0d6efd;
+}
+
+.sidebar-div-dark-hover a:hover {
+  background-color: #3a3b3c;
+  color: #ffffff;
 }
 
 .sidebar-button {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.sidebar-button-dark {
+  color: #ffffff;
 }
 
 /* /////////////// footer \\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -101,8 +109,19 @@
   object-fit: cover;
 }
 
+/* 	#e4e6eb */
+/* 	#3a3b3c */
+
+.active-dark {
+  background-color: #3a3b3c;
+}
+
+.active-dark span {
+  color: #ffffff;
+}
+
 .active {
-  background-color: #ebebeb;
+  background-color: #e4e6eb;
 }
 
 .active-dark {
@@ -148,10 +167,19 @@
   font-size: 18px;
   color: #444444;
   background-color: #f8f9fa;
+  width: 200px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 .box:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.box-dark {
+  background-color: #242526;
+  color: #ffffff;
+}
+.box-dark:hover {
+  background-color: #3a3b3c;
 }
 
 /* /////////////// user button \\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -174,10 +202,12 @@
   font-size: 18px;
   width: 150px;
 }
-.user-button a:hover {
+
+.user-button-light a:hover {
   background-color: #ebebeb;
   color: #0d6efd;
 }
+
 .user-button a span {
   display: flex;
   align-items: center;
@@ -294,8 +324,12 @@ blockquote {
 
 /* /////////////////////////// explanation \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
+.explanation-window {
+  background-color: #ffffff;
+  border: 1px solid #75757528;
+}
 .explanation-window-dark {
-  background-color: #3a3b3c;
+  background-color: #242526;
   border: 1px solid #75757528;
 }
 
@@ -313,4 +347,22 @@ blockquote {
 
 .post-header-border {
   border-bottom: 1px solid #75757528;
+}
+
+/* /////////////////////////// table \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+.tbody-dark a {
+  color: #ffffff;
+}
+.tbody-dark a:hover {
+  color: #0d6efd;
+}
+.tbody-dark {
+  background-color: #242526;
+  border: 1px solid #75757528;
+  color: #ffffff;
+}
+.tbody-dark-dark {
+  background-color: #242526;
+  border: 1px solid #75757528;
+  color: #ffffff;
 }

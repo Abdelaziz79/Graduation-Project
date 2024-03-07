@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDarkMode } from "../context/DarkModeContext";
 
 export default function Box({ item }) {
   const topics = item.topics.split("-");
-
+  const { darkMode } = useDarkMode();
   return (
-    <Link to={`/topics/${item.id}`} className="text-decoration-none">
-      <div className="box p-3 ">
+    <Link to={`/topics/${item.id}`} className="text-decoration-none ">
+      <div className={`box ${darkMode ? "box-dark" : ""}  p-3 `}>
         <p className="fw-bold mb-2 ">{item.title}</p>
         <span
           className={`p-1 rounded-3 text-center text-white fs-6 ${item.level}`}

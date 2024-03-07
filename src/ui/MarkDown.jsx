@@ -36,7 +36,7 @@ export default function MarkDown({ markdown }) {
         code: Code,
       }}
       className={`no-scroll-width rounded p-3 ${
-        darkMode ? "explanation-window-dark" : "bg-body-tertiary"
+        darkMode ? "explanation-window-dark" : "explanation-window"
       }  h-100 overflow-auto explanation-window "
       `}
     />

@@ -29,24 +29,66 @@ export default function SideBar() {
         className="rounded-circle"
       />
       <p className="lead fw-bold ">CodeRoad</p>
-      <div className={`${darkMode ? "sidebar-div-dark" : ""} sidebar-div `}>
-        <NavLink to="/">
-          <span className="sidebar-button">
+      <div
+        className={`${
+          darkMode
+            ? "sidebar-div-dark sidebar-div-dark-hover"
+            : "sidebar-div-light-hover"
+        } sidebar-div `}
+      >
+        <NavLink
+          to="/"
+          className={
+            darkMode ? ({ isActive }) => (isActive ? "active-dark" : "") : ""
+          }
+        >
+          <span
+            className={`${
+              darkMode ? "sidebar-button-dark " : ""
+            } sidebar-button`}
+          >
             <HiHome size={20} /> Home
           </span>
         </NavLink>
-        <NavLink to="/user">
-          <span className="sidebar-button">
+        <NavLink
+          to="/user"
+          className={
+            darkMode ? ({ isActive }) => (isActive ? "active-dark" : "") : ""
+          }
+        >
+          <span
+            className={`${
+              darkMode ? "sidebar-button-dark " : ""
+            } sidebar-button`}
+          >
             <HiUser size={20} /> User
           </span>
         </NavLink>
-        <NavLink to="/topics">
-          <span className="sidebar-button">
+        <NavLink
+          to="/topics"
+          className={
+            darkMode ? ({ isActive }) => (isActive ? "active-dark" : "") : ""
+          }
+        >
+          <span
+            className={`${
+              darkMode ? "sidebar-button-dark " : ""
+            } sidebar-button`}
+          >
             <HiMiniBookOpen size={20} /> Topics
           </span>
         </NavLink>
-        <NavLink to="/posts">
-          <span className="sidebar-button">
+        <NavLink
+          to="/posts"
+          className={
+            darkMode ? ({ isActive }) => (isActive ? "active-dark" : "") : ""
+          }
+        >
+          <span
+            className={`${
+              darkMode ? "sidebar-button-dark " : ""
+            } sidebar-button`}
+          >
             <HiMiniGlobeAsiaAustralia size={20} /> Posts
           </span>
         </NavLink>
