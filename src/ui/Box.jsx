@@ -14,9 +14,9 @@ export default function Box({ item }) {
         >
           {item.level}
         </span>
-        <div>
+        <div className="tag">
           {topics?.map((topic) => (
-            <Tage key={topic} name={topic} kay={item.id} />
+            <Tag key={topic} name={topic} kay={item.id} />
           ))}
         </div>
       </div>
@@ -24,6 +24,6 @@ export default function Box({ item }) {
   );
 }
 
-function Tage({ name }) {
+function Tag({ name }) {
   return <span className="p-1 rounded-3 text-center  fs-6">{name}</span>;
 }

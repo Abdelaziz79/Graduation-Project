@@ -168,8 +168,24 @@
   color: #444444;
   background-color: #f8f9fa;
   width: 200px;
+  height: 140px;
+  overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+.box p {
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.tag {
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .box:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -365,4 +381,33 @@ blockquote {
   background-color: #242526;
   border: 1px solid #75757528;
   color: #ffffff;
+}
+
+/* /////////////////////////// quiz \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.quiz-page {
+  min-height: 500px;
+}
+
+.quiz-answer-button {
+  text-align: left;
+}
+.quiz-answer-button-light {
+  background-color: #e4e6eb;
+  color: #4e4e4e;
+}
+
+/* /////////////////////////// table \\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+.t-td {
+  width: 200px;
+  text-overflow: ellipsis;
+}
+.t-title {
+  font-size: large;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+.t-topics {
+  text-overflow: ellipsis;
+  font-weight: 500;
 }

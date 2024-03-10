@@ -32,7 +32,7 @@ export default function TableComp({ explanations }) {
       <tbody className="">
         {explanations?.map((explanation, index) => (
           <tr key={explanation.id}>
-            <td>
+            <td className="t-td">
               <Link
                 to={`/topics/${explanation.id}`}
                 className={`text-decoration-none ${
@@ -42,27 +42,27 @@ export default function TableComp({ explanations }) {
                 {index + 1}
               </Link>
             </td>
-            <td>
+            <td className="t-td">
               <Link
                 to={`/topics/${explanation.id}`}
-                className={`text-decoration-none ${
+                className={`text-decoration-none t-title ${
                   darkMode ? "text-light" : "text-dark"
                 }`}
               >
                 {explanation.title}
               </Link>
             </td>
-            <td>
+            <td className="t-td">
               <Link
                 to={`/topics/${explanation.id}`}
-                className={`text-decoration-none ${
+                className={`text-decoration-none t-topics ${
                   darkMode ? "text-light" : "text-dark"
                 }`}
               >
                 {explanation.topics?.split("-").join(", ")}
               </Link>
             </td>
-            <td>
+            <td className="t-td">
               <Link
                 to={`/topics/${explanation.id}`}
                 className={`text-decoration-none ${
@@ -72,7 +72,7 @@ export default function TableComp({ explanations }) {
                 {explanation.level}
               </Link>
             </td>
-            <td>
+            <td className="t-td">
               <Link>
                 <button
                   className={`btn ${darkMode ? "text-light" : "text-dark"}`}

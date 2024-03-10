@@ -5,7 +5,6 @@ import LevelStatistic from "./LevelStatistic";
 
 import { useExplanation } from "../features/explanation/useExplanation";
 import { Col, Row, Spinner } from "react-bootstrap";
-import HeatMap from "./HeatMap";
 
 export default function DashboardPage() {
   const { isLoading, explanationTopics } = useExplanation();
@@ -13,11 +12,6 @@ export default function DashboardPage() {
   if (isLoading) return <Spinner />;
   return (
     <Row>
-      <Col md={12} lg={12} sm={12}>
-        <StatisticBox title={"Heatmap"}>
-          <HeatMap />
-        </StatisticBox>
-      </Col>
       <Col md={12} lg={8} sm={12}>
         <StatisticBox title={"Topics"}>
           <TopicsStatistic />

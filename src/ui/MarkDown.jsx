@@ -7,11 +7,13 @@ import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { memo } from "react";
 import { useDarkMode } from "../context/DarkModeContext";
 
-const Code = memo(function Code(props) {
+const Syntax = memo(SyntaxHighlighter);
+
+const Code = memo(function CodeComp(props) {
   const { children, className, node, ...rest } = props;
   const match = /language-(\w+)/.exec(className || "");
   return match ? (
-    <SyntaxHighlighter
+    <Syntax
       {...rest}
       PreTag="div"
       children={String(children).replace(/\n$/, "")}

@@ -1,13 +1,9 @@
 import React from "react";
-import { useDarkMode } from "../context/DarkModeContext";
+import Background from "./Background";
 
 export default function UpdateUserInfo() {
-  const { darkMode } = useDarkMode();
-
   return (
-    <div
-      className={` ${darkMode ? "form-style-dark" : "form-style"} p-3 rounded `}
-    >
+    <Background>
       <h3 className="mb-4">Update user data</h3>
       <form>
         <div className="d-flex flex-column gap-3 w-75">
@@ -55,6 +51,6 @@ export default function UpdateUserInfo() {
           <button className="btn border ">cancel</button>
         </div>
       </form>
-    </div>
+    </Background>
   );
 }
