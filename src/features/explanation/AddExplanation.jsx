@@ -37,10 +37,12 @@ export default function AddExplanation() {
         setExplanation("");
         setLevel("easy");
         setShowQuiz(false);
+        setQuestions([]);
       },
     });
 
     console.log(newExplanation);
+    console.log(questions);
     setNewTopic(newExplanation);
   }
   const { darkMode } = useDarkMode();

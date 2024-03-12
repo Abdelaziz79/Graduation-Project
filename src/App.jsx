@@ -14,6 +14,7 @@ import AddExplanation from "./features/explanation/AddExplanation";
 import UserInfo from "./ui/UserInfo";
 import TheExplanationPage from "./features/topics/TheExplanationPage";
 import UpdateTopic from "./features/topics/UpdateTopic";
+import QuizPage from "./pages/QuizPage";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -22,7 +23,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
 import { useDarkMode } from "./context/DarkModeContext";
-import QuizPage from "./ui/QuizPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -60,7 +60,7 @@ function App() {
               <Route path="posts" element={<Posts />} />
               <Route path="preview" element={<Preview />} />
               <Route path="*" element={<h1> Page Not Found</h1>} />
-              <Route path="/quiz" element={<QuizPage />} />
+              <Route path="/quiz/:id" element={<QuizPage />} />
             </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
