@@ -14,3 +14,17 @@ export async function getQuiz(id) {
 
   return data;
 }
+
+export async function createQuiz(quiz) {
+  const { data, error } = await supabase
+    .from("quizzes")
+    .insert([quiz])
+    .select();
+
+  if (error) {
+    console.error(error);
+    throw new Error(error.message);
+  }
+
+  return data;
+}

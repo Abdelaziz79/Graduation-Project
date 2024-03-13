@@ -1,14 +1,14 @@
 import Box from "../../ui/Box";
 import TableComp from "./TableComp";
 
-import { useState } from "react";
 import { useExplanation } from "../explanation/useExplanation";
 import { Spinner } from "react-bootstrap";
 import { HiListBullet, HiOutlineSquares2X2 } from "react-icons/hi2";
+import { useLocalStorageState } from "../../hooks/useLocalStorageState";
 
 export default function TheTopicsList() {
   const { isLoading, explanationTopics } = useExplanation();
-  const [table, setTable] = useState(true);
+  const [table, setTable] = useLocalStorageState(true, "table");
 
   if (isLoading) {
     return <Spinner />;

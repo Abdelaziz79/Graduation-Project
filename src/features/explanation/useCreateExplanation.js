@@ -7,7 +7,6 @@ export default function useCreateExplanation() {
     mutationFn: create,
     onSuccess: () => {
       toast.success("Explanation created");
-      console.log("explanation created");
     },
     onError: (error) => {
       console.error(error);

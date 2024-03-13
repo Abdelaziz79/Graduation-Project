@@ -10,6 +10,8 @@ export default function Dashboard() {
     <div>
       <h1>Dashboard</h1>
       <hr />
+
+      <DashboardPage />
       <Button
         onClick={() => setShowExplanation((show) => !show)}
         variant="success"
@@ -18,7 +20,6 @@ export default function Dashboard() {
         {showExplanation ? "Hide" : "Add"} Explanation
       </Button>
       {showExplanation && <AddExplanation />}
-      <DashboardPage />
     </div>
   );
 }

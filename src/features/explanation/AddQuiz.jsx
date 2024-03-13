@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 
-export default function AddQuiz({ questions, setQuestions }) {
+export default function AddQuiz({ questions, setQuestions, handleAddQuiz }) {
   const [question, setQuestion] = useState("");
   const [option1, setOption1] = useState("");
   const [option2, setOption2] = useState("");
@@ -27,9 +27,8 @@ export default function AddQuiz({ questions, setQuestions }) {
     setOption2("");
     setOption3("");
     setOption4("");
-    setCorrectOption("option1");
+    setCorrectOption("");
   }
-
   return (
     <Row>
       <form>
@@ -80,10 +79,13 @@ export default function AddQuiz({ questions, setQuestions }) {
               aria-label="Default select example"
               id="correct"
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
+              <option value="" hidden>
+                ---
+              </option>
+              <option value={option1}>1</option>
+              <option value={option2}>2</option>
+              <option value={option3}>3</option>
+              <option value={option4}>4</option>
             </select>
           </Col>
           <Col>
@@ -113,6 +115,9 @@ export default function AddQuiz({ questions, setQuestions }) {
         </Row>
         <Button className="btn-success mt-3" onClick={handleSubmit}>
           Add Question {questions.length + 1}
+        </Button>
+        <Button className="btn-success mt-3 ms-3" onClick={handleAddQuiz}>
+          Create Quiz
         </Button>
       </form>
     </Row>

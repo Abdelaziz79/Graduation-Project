@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 export default function TheExplanationPage() {
   const { explanation, isLoading } = useGetExplanationById();
-  console.log(explanation);
   if (isLoading) {
     return <Spinner />;
   }
